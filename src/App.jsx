@@ -15,9 +15,9 @@ function App() {
 
     <Titulo titulo={titulo} subtitulo='Soy sub de app'/>
 
-    <ItemListContainer saludo='Bienvenidos a Eclair!' />
+    <ItemListContainer saludo='Para los verdaderos coffee lovers' />
 
-    <Formulario />
+    {/* <Formulario /> */}
     
     </>
   )

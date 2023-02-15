@@ -11,8 +11,10 @@ export const ItemCount = ({saludo, componente}) => {
     }
 
     const removeItem = () => {
-        setCount(count - 1)
+        if (count > 0) {
+        setCount(count => count - 1)
     }
+    };
 
     return (
         <>

@@ -1,7 +1,6 @@
-import { Item } from "../Item/Item"
 import { ItemCount } from "../ItemCount/ItemCount"
 import Titulo from "../Titulo/Titulo"
-
+import { ItemList } from "./ItemList/ItemList"
 
 export const ItemListContainer = ({saludo}) => {
     let count = 0
@@ -10,11 +9,9 @@ export const ItemListContainer = ({saludo}) => {
         <>
         <Titulo titulo={titulo} subtitulo='Stay Happy'/>
         <p>{saludo}</p>     
-        <Item/>
+        <ItemList/>
         <ItemCount/>       
         </>
          )
         }
-
-
-        
+      
