@@ -6,7 +6,7 @@ const Item = ({producto}) => {
       <div key={producto.id} className="card w-25 m-5 shadow ">
         
                           <div className="card-header">
-                              Nombre: {producto.name}
+                               {producto.name}
                           </div>
                           <div className="card-body">
                               <img className="w-100" src={producto.img} />
@@ -20,8 +20,6 @@ const Item = ({producto}) => {
                                             <button className="btn btn-outline-dark w-100">Detalle</button>
                                      </Link>
                           </div>
-                          
-           
         </div>
     )
   }
