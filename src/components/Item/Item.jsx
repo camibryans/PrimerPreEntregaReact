@@ -11,7 +11,7 @@ const Item = ({producto}) => {
                           <div className="card-body">
                               <img className="w-100" src={producto.img} />
                               <br />
-                              <label>Categoría: {producto.categoria}</label>
+                              <label>Categoría: {producto.category}</label>
                               <label>Precio: {producto.price}</label>
                               <label>Stock: {producto.stock}</label>
                           </div>

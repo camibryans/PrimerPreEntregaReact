@@ -20,7 +20,7 @@ const ItemDetail = ({product}) => {
                         <img src={product.img} className="w-50"/>
                         <br/>
                         <p> {product.name}</p>
-                        <p>Categoria: {product.categoria}</p>
+                        <p>Categoria: {product.category}</p>
                         <p>Precio: {product.price}</p>
                         <ItemCount initial={1} stock={10} onAdd={onAdd}/>
                     </div>
