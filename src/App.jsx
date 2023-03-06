@@ -1,6 +1,6 @@
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
-import Formulario from './components/Formulario/Formulario'
-import Titulo from './components/Titulo/Titulo'
+import Form from './components/Form/Form'
+import Title from './components/Title/Title'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ItemCount } from './components/ItemCount/ItemCount'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
@@ -19,12 +19,12 @@ function App() {
         <Route path='/detalle/:idProducto' element={<ItemDetailContainer/>} />
         <Route path='/categoria/:idCategoria' element={<ItemListContainer/>} />
         <Route path='*' element={ <Navigate to='/' />} />  
-        {/* <Route path='cart' elemento={<CartContainer/>} /> */}
+        {/* <Route path='/cart' element={<CartContainer/>} /> */}
    
       </Routes>
       {/* <ItemCount inital={1} stock={10} onAdd={()=>{}} /> */}
-    {/* <Titulo titulo={titulo} subtitulo='Soy sub de app'/> */}
-    {/* <Formulario /> */}
+    {/* <Title title={title} subtitle='Soy sub de app'/> */}
+    {/* <Form /> */}
       </CartContextProvider>
     </BrowserRouter>
     

@@ -1,7 +1,7 @@
-import Titulo from "../Titulo/Titulo"
+import Titulo from "../Title/Title"
 
 
-const Formulario = () => {
+const Form = () => {
     return (
         <section>
         <Titulo titulo='soy titulo de form' subtitulo='soy subt de form'/>
@@ -13,4 +13,4 @@ const Formulario = () => {
     )
 }
 
-export default Formulario
+export default Form
