@@ -6,22 +6,21 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({})
-  const { idProducto } = useParams()
+  const { idProduct } = useParams()
 
 
   useEffect(()=>{
       
-  //     gFetch(idProducto)
+  //     gFetch(idProduct)
   //     .then(resp => setProduct(resp))
-  //     .catch(err => setProduct(err))
   // },[])
 
   // setProduct([])
 
   gFetch()
-  .then(resp => setProduct(resp.find( producto => producto.id === idProducto)))
+  .then(resp => setProduct(resp.find( product => product.id === idProduct)))
   .catch(error => console.log(error))
-}, [idProducto])
+}, [idProduct])
 console.log(product)
   
   return (

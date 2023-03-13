@@ -1,13 +1,15 @@
 import Item from "../Item/Item"
 
-const ItemList = ( { productos}) => {
+const ItemList = ( { products}) => {
 
 return (
-    <div className="justify-content-center align-item-center"
+    <div style={{display:'flex', flexDirection: 'row ', flexWrap:'wrap'}} className="justify-content-center align-item-center"
         // style={styleCards}
      >         
-            {productos.map( producto => <Item producto={producto}/> )
-        }
+                {products.map( product => 
+            
+                <Item key={product.id} product={product}/> )
+                      }
     </div>
 )
 }

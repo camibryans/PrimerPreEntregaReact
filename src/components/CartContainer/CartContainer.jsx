@@ -1,22 +1,31 @@
+import { useCartContext } from "../../context/CartContext"
+
 const CartContainer = () => {
 
-    const { cartList,vaciarCarrito} = useCartContext()
+    const { cartList,emptyCart, removeItem} = useCartContext()
 
     return(
         <div>
             {
                 cartList.map(prodCart => (
-                    <p key={prodCart.id}>
-                        {/* <div className="w-50"> */}
-                            <img src={prodCart.foto} className='w-25' />
-                        {/* </div> */}
-                        Nombre: {prodCart.name} -
-                        Cantidad: {prodCart.cantidad} -
+                    <label>
+                        <img src={prodCart.img} className='w-25' />
+                        Nomnbre: {prodCart.name}
+                        Cantidad: {prodCart.quantity}
                         Precio: {prodCart.price}
-                    </p>
+                    </label>
+                    // <p key={prodCart.id} className='w-50'>
+                    //     {/* <div className="w-50"> */}
+                    //         <img src={prodCart.img} className='w-25' />
+                    //     {/* </div> */}
+                    //     Nombre: {prodCart.name} -
+                    //     Cantidad: {prodCart.quantity} -
+                    //     Precio: {prodCart.price}
+                    //     <button onClick={removeItem}>Eliminar item</button>
+                    // </p>
                 ))
             }
-        <button onClick={vaciarCarrito}>Vaciar carrito</button>
+        <button onClick={emptyCart}>Vaciar carrito</button>
         </div>
     )
 }

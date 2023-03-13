@@ -1,34 +1,50 @@
-import { gFetch } from "../../utiles/gFetch";
-import { useCartContext } from "../CartContext/CartContext";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount"
 
 
 const ItemDetail = ({product}) => {
+    const [Buy, setBuy] = useState(true)
+    const { addCart } = useCartContext()
 
-    const { agregarCart } = useCartContext()
-
-        function onAdd(cantidad){
-        console.log(cantidad)
-        agregarCart( { ...product, cantidad } )
+        function onAdd(quantity){
+        console.log(quantity)
+        addCart( { ...product, quantity } ) 
+        setBuy(false)
     }
 
     return (
         <div>
             <div className="row">
-                <div className="col-6">       
+                <div className=" card col-6 ">       
                     <div> 
-                        <img src={product.img} className="w-50"/>
-                        <br/>
-                        <p> {product.name}</p>
-                        <p>Categoria: {product.category}</p>
-                        <p>Precio: {product.price}</p>
-                        <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+                        <p className="card-header"> {product.name}</p>
+                        <div className="card-body">
+                            <img src={product.img} className="w-50"/>
+                            <br/>            
+                            <p>Categoria: {product.category}</p>
+                            <br/>
+                            <p>Precio: {product.price}</p>
+                        </div>
                     </div>
                 </div>
-                <div className="col-6">
-                    <button className="btn btn btn-outline-dark w-50">Finalizar compra</button>
-                </div>
-            </div>
+                
+                    {Buy ? 
+                                <div className="card-footer ">
+                                <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+                                </div>
+                        :
+                    <>     
+                    <div className="col-6">              
+                    <Link to="/" className="btn btn btn-outline-dark w-50">Continuar comprando</Link>
+                    <Link to="/cart" className="btn btn btn-outline-dark w-50">Finalizar compra</Link>
+                    </div>  
+                    </>
+                }   
+                    </div>
+                      
+            
         </div>
     )
 }

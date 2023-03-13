@@ -4,28 +4,28 @@ import { gFetch } from "../../utiles/gFetch"
 import ItemList from "../ItemList/ItemList"
  
 
-export const ItemListContainer = ({saludos}) => {
-    const [productos, setProductos] = useState ([])
+export const ItemListContainer = ({greeting}) => {
+    const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState(true)
-    const { idCategoria } = useParams()
+    const { idCategory } = useParams()
 
 
     useEffect(()=>{
-        if (idCategoria) {
+        if (idCategory) {
             gFetch()
-            .then(resp => setProductos(resp.filter(producto=> producto.categoria === idCategoria)))
+            .then(resp => setProducts(resp.filter(product=> product.category === idCategory)))
             .catch( err => console.log(err))
             .finally( ()=> setLoading(false))            
             
         } else {
             gFetch()
-            .then(resp => setProductos(resp))
+            .then(resp => setProducts(resp))
             .catch( err => console.log(err))
             .finally( ()=> setLoading(false))            
         }
-    }, [idCategoria])
+    }, [idCategory])
     
-console.log(idCategoria)
+console.log(idCategory)
 
 return(
     <>
@@ -33,8 +33,10 @@ return(
                     <h2>Cargando ...</h2>
                 : 
                     <>
-                        <h2>{saludos}</h2>
-                        <ItemList productos={productos}/>
+                        {/* <h2>{greeting}</h2> */}
+                      
+                            <ItemList products={products}/>
+                       
                     </>
             }
         </>

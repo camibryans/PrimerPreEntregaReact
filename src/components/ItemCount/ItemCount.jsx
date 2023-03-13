@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const ItemCount = ({initial  = 0, stock=10, onAdd}) => {
+export const ItemCount = ({initial= 1, stock=10, onAdd}) => {
     const [count, setCount] = useState(0)
     
     const AddItem = () => {
@@ -19,7 +19,10 @@ export const ItemCount = ({initial  = 0, stock=10, onAdd}) => {
     <div className="card mt-5 w-50" >
             <div className="card-body row">
                 <div className="col">
-                    <button className="btn btn-outline-dark w-100" onClick={removeItem}> - </button>
+                    <button 
+                        className="btn btn-outline-dark w-100" 
+                        onClick={removeItem}> - 
+                    </button>
                 </div>
                 <div className="col">
                     <center>
@@ -27,11 +30,17 @@ export const ItemCount = ({initial  = 0, stock=10, onAdd}) => {
                     </center> 
                 </div>
                 <div className="col">
-                     <button className="btn btn-outline-dark w-100" onClick={AddItem}> + </button>
+                     <button 
+                        className="btn btn-outline-dark w-100" 
+                        onClick={AddItem}> + 
+                    </button>
                 </div>
             </div>
                 <div className="card-footer">
-                    <button className="btn btn-outline-dark w-100" onClick={()=>onAdd(count)}>Agregar al carrito</button>
+                    <button     
+                        className="btn btn-outline-dark w-100" 
+                        onClick={()=>onAdd(count)}>Agregar al carrito
+                    </button>
                 </div>
         </div>
       )

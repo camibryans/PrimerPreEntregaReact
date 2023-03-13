@@ -1,4 +1,4 @@
-let productos = [
+let products = [
     {id:"1", category: "Cafeteras", name: "Chemex", price: "$ 20000", stock: "4", img: "/imagenes/Chemex coffeemaker.jpg"},
     {id:"2", category: "Cafeteras", name: "AeroPress", price: " $ 30000",stock: "2", img: "/imagenes/AeroPress.jpg"},
     {id:"3", category: "Cafeteras", name: "Filtros para Chemex", price: "$ 9000", stock: "3", img: "/imagenes/Chemex filters.jpg"},
@@ -16,13 +16,13 @@ let productos = [
     {id:"15", category: "Cafes", name: "Puerto Blest - Kenya", price: "$ 3000", stock: "3", img: "/imagenes/Puerto Blest Kenya.jpg"}
 ]
 
-export default productos;
+export default products;
 
 export const gFetch = () => new Promise((res, rej) => {
     let condition = true
     if (condition) {
         setTimeout(() => {
-            res(productos)
+            res(products)
         }, 2000)
     } else {
         rej('Algo salió mal')

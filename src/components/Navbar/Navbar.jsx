@@ -1,7 +1,6 @@
 import CartWidget from "../CartWidget/CartWidget"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavLink } from "react-router-dom"
-import { CartContext } from "../CartContext/CartContext"
 
 
 function Navbar() {
@@ -18,18 +17,18 @@ function Navbar() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
       <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/'>Home</NavLink>
-        <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Cafeteras'>Cafeteras</NavLink>
-        <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Cafes'>Cafe en grano</NavLink>  
-        <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Herramientas'>Herramientas Barista</NavLink>
+        {/* <NavLink className={({isActive})=> isActive ? 'btn btn-outline-primary' : 'btn btn-outline-primary' } >Cafeteras</NavLink>
+        <NavLink className={({isActive})=> isActive ? 'btn btn-outline-primary' : 'btn btn-outline-primary' } >Cafe en grano</NavLink>  
+        <NavLink className={({isActive})=> isActive ? 'btn btn-outline-primary' : 'btn btn-outline-primary' } >Herramientas Barista</NavLink> */}
         <li className="nav-item dropdown">
-          <NavLink className="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Capacitaciones
+          <NavLink className="nav-link dropdown-toggle btn btn-outline-primary"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tienda
           </NavLink>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Latte Art</a></li>
-            <li><a className="dropdown-item" href="#">Filtrados</a></li>
+            <NavLink className= {({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Cafeteras'>Cafeteras</NavLink>
+            <NavLink className= {({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Cafes'>Cafe en grano</NavLink>
             {/* <li><hr className="dropdown-divider"/></li> */}
-            <li><a className="dropdown-item" href="#">Espresso</a></li>
+            <NavLink className={({isActive})=> isActive ? 'btn btn-primary' : 'btn btn-outline-primary' } to='/categoria/Herramientas'>Herramientas Barista</NavLink>
           </ul>
         </li>   
       </ul>
