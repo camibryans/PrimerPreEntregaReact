@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Title = (props) => {
-    console.log(props)
     return (
         <div>
         <h1>{props.title}</h1>

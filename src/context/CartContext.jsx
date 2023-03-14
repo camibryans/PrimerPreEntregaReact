@@ -10,16 +10,20 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     const addCart = ( product ) => {
-        const idxProduct = cartList.findIndex(product => product.id === product.id)
-            if (idxProduct!==-1){
-                cartList[idxProduct].quantity += product.quantity
-                setCartList([...cartList])
-             return
-            }   
-        setCartList( [
-            ...cartList,
-            product
-        ] )
+            const existsInCart = cartList.find(prod => prod.id === product.id)
+                if(existsInCart) {
+                    const updateCart = cartList.map((item) => {
+                        if(item.id === product.id) {
+                            return {...item, quantity:item.quantity + product.quantity}
+                        }else{
+                            return item
+                    }})
+                setCartList(updateCart)
+            } else{
+                setCartList( [
+                    ...cartList,
+                    product
+                ])}
     }
 
     const totalQuantity = () => cartList.reduce((count, product) => count += product.quantity, 0)
@@ -28,9 +32,9 @@ export const CartContextProvider = ({children}) => {
 
     const emptyCart = () =>{ setCartList([]) }
  
-    const removeItem = (id) =>
-        setCartList(cartList.filter(product => product.id!== id))
-    
+    const removeItem = 
+    (id) =>setCartList(cartList.filter(prod => prod.id!== id))
+        
 
     return (
         <CartContext.Provider value={{
@@ -45,4 +49,3 @@ export const CartContextProvider = ({children}) => {
         </CartContext.Provider>
     )
 }
-

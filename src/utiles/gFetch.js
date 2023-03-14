@@ -7,7 +7,7 @@ let products = [
     {id:"6", category: "Cafeteras", name: "Espresso para el hogar", price: "$ 45000", stock: "3", img: "/imagenes/espresso.jpg"},
     {id:"7", category: "Herramientas", name: "Tamper", price: "$ 2000", stock: "3", img: "/imagenes/tamper.jpg"},
     {id:"8", category: "Herramientas", name: "Knock Box", price: " $ 7000",stock: "1", img: "/imagenes/knock box.jpg"},
-    {id:"9", category: "Herramientas", name: "Termometro", price: "$ 1000", stock: "sin stock", img: "/imagenes/termometro.jpg"},
+    {id:"9", category: "Herramientas", name: "Termometro", price: "$ 1000", stock: "0", img: "/imagenes/termometro.jpg"},
     {id:"10", category: "Herramientas", name: "Pitcher", price: "$ 3000", stock: "5", img: "/imagenes/pitcher.jpg"},
     {id:"11", category: "Cafes", name: "Puerto Blest - Colombia", price: " $ 3000",stock: "5", img: "/imagenes/Puerto Blest Colombia.jpg"},
     {id:"12", category: "Cafes", name: "Puerto Blest - Nicaragua", price: "$ 3000", stock: "3", img: "/imagenes/Puerto Blest Nicaragua.jpg"},

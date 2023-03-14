@@ -32,7 +32,7 @@ const ItemDetail = ({product}) => {
                 
                     {Buy ? 
                                 <div className="card-footer ">
-                                <ItemCount initial={1} stock={10} onAdd={onAdd}/>
+                                <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
                                 </div>
                         :
                     <>     

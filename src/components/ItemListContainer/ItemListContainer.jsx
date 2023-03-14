@@ -3,6 +3,15 @@ import { useParams } from "react-router-dom"
 import { gFetch } from "../../utiles/gFetch"
 import ItemList from "../ItemList/ItemList"
  
+const Loading = () => {
+    useEffect (() => {
+        return () => console.log('stop loading...')
+    } )
+    return (
+        <h2>Cargando ...</h2>
+    )
+}
+
 
 export const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState ([])
@@ -30,10 +39,10 @@ console.log(idCategory)
 return(
     <>
  { loading ? 
-                    <h2>Cargando ...</h2>
+                    <Loading/>
                 : 
                     <>
-                        {/* <h2>{greeting}</h2> */}
+                        <h2>{greeting}</h2>
                       
                             <ItemList products={products}/>
                        
