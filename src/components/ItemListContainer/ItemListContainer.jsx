@@ -12,12 +12,10 @@ const Loading = () => {
     )
 }
 
-
 export const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState(true)
     const { idCategory } = useParams()
-
 
     useEffect(()=>{
         if (idCategory) {
@@ -45,7 +43,6 @@ return(
                         <h2>{greeting}</h2>
                       
                             <ItemList products={products}/>
-                       
                     </>
             }
         </>
