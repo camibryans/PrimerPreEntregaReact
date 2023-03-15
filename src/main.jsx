@@ -4,6 +4,9 @@ import App from './App'
 // import './index.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.css'
+import { initFirebase } from './firebase/config'
+
+initFirebase()
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
