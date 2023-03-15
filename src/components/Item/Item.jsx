@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Item = ({product}) => {
     return ( 
                <div key={product.id} className="card w-25 m-4 shadow">
-                                    <div className="card-header">
+                                    <div className="container d-flex justify-content-center card-header">
                                         {product.name}
                                     </div>
                                     <div className="card-body">

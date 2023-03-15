@@ -19,7 +19,7 @@ const ItemDetail = ({product}) => {
             <div className="row">
                 <div className=" card col-6 ">       
                     <div> 
-                        <p className="card-header"> {product.name}</p>
+                        <p className="card-header container d-flex justify-content-center"> {product.name}</p>
                         <div className="card-body">
                             <img src={product.img} className="w-50"/>
                             <br/>            
@@ -42,7 +42,7 @@ const ItemDetail = ({product}) => {
                     </div>  
                     </>
                 }   
-                    </div>
+            </div>
                       
             
         </div>

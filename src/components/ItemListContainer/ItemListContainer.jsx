@@ -3,35 +3,13 @@ import { useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import { gFetch } from "../../utiles/gFetch"
 import ItemList from "../ItemList/ItemList"
+import Loading from "../Loading/Loading"
  
-const Loading = () => {
-    useEffect (() => {
-        return () => console.log('stop loading...')
-    } )
-    return (
-        <h2>Cargando ...</h2>
-    )
-}
-
 export const ItemListContainer = ({greeting}) => {
     const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState(true)
     const { idCategory } = useParams()
-
-    // useEffect(()=>{
-    //     if (idCategory) {
-    //         gFetch()
-    //         .then(resp => setProducts(resp.filter(product=> product.category === idCategory)))
-    //         .catch( err => console.log(err))
-    //         .finally( ()=> setLoading(false))            
-            
-    //     } else {
-    //         gFetch()
-    //         .then(resp => setProducts(resp))
-    //         .catch( err => console.log(err))
-    //         .finally( ()=> setLoading(false))            
-    //     }
-    // }, [idCategory])
+    
 
     useEffect(()=>{
         const db = getFirestore()        
@@ -39,7 +17,7 @@ export const ItemListContainer = ({greeting}) => {
         
 
         if(idCategory) {
-        const queryFilter = query(queryCollection, where( 'categoria', '==' , idCategory))              
+        const queryFilter = query(queryCollection, where( 'category', '==' , idCategory))              
 
         getDocs(queryFilter)
         .then(respCollection => setProducts( respCollection.docs.map(prod => ({ id: prod.id, ...prod.data() })) ))
@@ -54,8 +32,7 @@ export const ItemListContainer = ({greeting}) => {
 
     }, [idCategory])
 
-    
-console.log(collection)
+
 
 return(
     <>
