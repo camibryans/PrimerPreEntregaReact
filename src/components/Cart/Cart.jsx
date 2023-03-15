@@ -6,6 +6,7 @@ import Form from "../Form/Form"
 const Cart = () => {
     const { cartList,emptyCart, removeItem, finalPrice, totalQuantity} = useCartContext()
 
+
 return(
     <div>    
         
