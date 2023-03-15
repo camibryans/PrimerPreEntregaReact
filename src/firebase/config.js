@@ -7,8 +7,8 @@ const firebaseConfig = {
   storageBucket: "eclair-e-commerce.appspot.com",
   messagingSenderId: "34319922232",
   appId: "1:34319922232:web:95173eded430f8de0022cd"
-};
+}
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 
 export const initFirebase = () => app
