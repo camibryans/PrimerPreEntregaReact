@@ -1,5 +1,7 @@
-import { Form, Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
+import EmptyCart from "../EmptyCart/EmptyCart"
+import Form from "../Form/Form"
+
 
 const Cart = () => {
     const { cartList,emptyCart, removeItem, finalPrice, totalQuantity} = useCartContext()
@@ -8,14 +10,10 @@ return(
     <div>    
         
       {cartList.length === 0  ? (
-        <div className="container d-flex justify-content-center">
-            <div>
-                <h2>Tu carrito está vacío!</h2>
-                <h4>Te invitamos a ver nuestros productos</h4>
-                <Link to="/"> <button className='btn btn-success' >Ir a Tienda</button></Link>
-            </div>
-        </div> 
-            ) : (                   
+        <EmptyCart/>
+
+            ) : (    
+                           
                  <div>
                 { cartList.map(prodCart=> (
                         
@@ -32,9 +30,12 @@ return(
                             <span><h3>Estás llevando {totalQuantity()} producto(s)</h3></span>
                             <span><h3>Total a pagar : ${finalPrice()}</h3></span>
                             <br/>
-                            <button onClick={emptyCart}>Vaciar carrito</button>     
-                            <Form/>
-                 </div>      
+                            <button onClick={emptyCart}>Vaciar carrito</button>  
+                 <Form/>
+
+                 </div>    
+                 
+                
                   )}
     </div>
 ) 

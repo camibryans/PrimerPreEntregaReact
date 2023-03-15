@@ -3,9 +3,7 @@ import Item from "../Item/Item"
 
 const ItemList = memo (({ products}) => {
     return (
-        <div style={{display:'flex', flexDirection: 'row ', flexWrap:'wrap'}} className="justify-content-center align-item-center"
-            // style={styleCards}
-        >         
+        <div style={{display:'flex', flexDirection: 'row ', flexWrap:'wrap'}} className="justify-content-center align-item-center">         
                     {products.map( product => 
                 
                     <Item key={product.id} product={product}/> )
