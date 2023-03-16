@@ -32,15 +32,11 @@ return(
                             <span><h3>Total a pagar : ${finalPrice()}</h3></span>
                             <br/>
                             <button onClick={emptyCart}>Vaciar carrito</button>  
-                 <Form/>
-
+                            <Form/>
                  </div>    
-                 
-                
                   )}
     </div>
-) 
-                }
+)}
 
 
 export default Cart

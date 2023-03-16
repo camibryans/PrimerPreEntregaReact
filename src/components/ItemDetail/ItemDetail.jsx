@@ -8,10 +8,10 @@ const ItemDetail = ({product}) => {
     const [Buy, setBuy] = useState(true)
     const { addCart } = useCartContext()
 
-        function onAdd(quantity){
-        console.log(quantity)
-        addCart( { ...product, quantity } ) 
-        setBuy(false)
+    function onAdd(quantity){
+    console.log(quantity)
+    addCart( { ...product, quantity } ) 
+    setBuy(false)
     }
 
     return (
@@ -31,15 +31,15 @@ const ItemDetail = ({product}) => {
                 </div>
                 
                     {Buy ? 
-                                <div className="card-footer ">
-                                <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
-                                </div>
+                        <div className="card-footer ">
+                            <ItemCount initial={1} stock={product.stock} onAdd={onAdd}/>
+                        </div>
                         :
                     <>     
-                    <div className="col-6">              
-                    <Link to="/" className="btn btn btn-outline-dark w-50">Continuar comprando</Link>
-                    <Link to="/cart" className="btn btn btn-outline-dark w-50">Finalizar compra</Link>
-                    </div>  
+                        <div className="col-6">              
+                            <Link to="/" className="btn btn btn-outline-dark w-50">Continuar comprando</Link>
+                            <Link to="/cart" className="btn btn btn-outline-dark w-50">Finalizar compra</Link>
+                        </div>  
                     </>
                 }   
             </div>

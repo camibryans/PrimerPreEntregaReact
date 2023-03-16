@@ -28,7 +28,7 @@ export const ItemListContainer = ({greeting}) => {
         .catch(err => console.error(err))
         .finally(()=> setLoading(false)) 
     }
-
+    
     }, [idCategory])
 
 
@@ -36,13 +36,12 @@ export const ItemListContainer = ({greeting}) => {
 return(
     <>
  { loading ? 
-                    <Loading/>
-                : 
-                    <>
-                        <h2>{greeting}</h2>
-                      
-                            <ItemList products={products}/>
-                    </>
+            <Loading/>
+            : 
+                <>
+                    <h2>{greeting}</h2> 
+                    <ItemList products={products}/>
+                </>
             }
         </>
     )
