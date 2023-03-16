@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {addDoc, collection,  getFirestore} from "firebase/firestore"
 import Title from "../Title/Title"
+import { useCartContext } from "../../context/CartContext"
 
 const Form = () => {
 
@@ -11,9 +12,11 @@ const Form = () => {
         email: ''
     })
     
+    const {cartList, finalPrice} = useCartContext()
+    
+    
     const createOrder = (event) => {
-        const {cartList, finalPrice} = useCartContext()
-
+      
         event.preventDefault()
         const order = {}
         order.buyer = dataForm
@@ -23,12 +26,12 @@ const Form = () => {
 
     const db = getFirestore()
     const queryCollection = collection(db, 'Orders')
-
+    
     addDoc(queryCollection, order)
     .then(resp => setId(resp.id))
     .catch(err => console.log(err))
     .finally(() => {
-        emptyCart()
+        // emptyCart()
         setDataForm({
             name:'',
             phone:'',
@@ -37,6 +40,18 @@ const Form = () => {
         })
     })
 }
+
+// const [error, setError] = useState("");
+
+// const handleSubmit = (event) => {
+//     event.preventDefault();
+//     if (dataForm.email !== dataForm.repeatemail) {
+//         setError("Por favor ingrese el mismo mail");
+//         return;
+//     }else {
+//         setError(""), createOrder();
+//     }
+//     };
 
 const handleOnChange = (event) => {
     setDataForm ({
@@ -60,8 +75,7 @@ const handleOnChange = (event) => {
                         className="form-control"
                         name="name" 
                         placeholder="Nombre"
-                        onChange={handleOnChange}
-                        value= {dataForm.name}
+                        onChange={handleOnChange}                       
                         />
                         <input 
                         type="text"
@@ -69,7 +83,6 @@ const handleOnChange = (event) => {
                         name="phone" 
                         placeholder="Número teléfonico"
                         onChange={handleOnChange}
-                        value= {dataForm.phone}
                         />
                         <input 
                         type="text"
@@ -77,8 +90,15 @@ const handleOnChange = (event) => {
                         name="email" 
                         placeholder="Email"
                         onChange={handleOnChange}
-                        value= {dataForm.email}
                         />
+                        <input 
+                        type="text"
+                        className="form-control"
+                        name="repeatemail" 
+                        placeholder="Repita su Email"
+                        onChange={handleOnChange}
+                        />
+                        {/* {Error && <span className="error">{Error}</span>} */}
                         <button className="btn btn-success">Generar orden de compra</button>
                     </form>
                 </div>

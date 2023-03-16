@@ -30,6 +30,7 @@ return(
                             <span><h3>Total a pagar : ${finalPrice()}</h3></span>
                             <br/>
                             <button onClick={emptyCart}>Vaciar carrito</button>  
+                            {/* <Link to={`/context`}>Crea tu Orden de Compra</Link> */}
                             <Form/>
                  </div>    
                   )}
