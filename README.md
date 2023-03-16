@@ -4,6 +4,8 @@ For CoffeLovers only
 
 DEMO: https://drive.google.com/file/d/1JgInEJI_NBfd6G7gMFEf6u7NY_eUZlBA/view?usp=share_link
 
+DEPLOY NETLIFY: https://gorgeous-faun-333448.netlify.app/
+
 Github Repo: https://camibryans.github.io/PrimerPreEntregaReact/
 
 # Proyect E-Commerce 
