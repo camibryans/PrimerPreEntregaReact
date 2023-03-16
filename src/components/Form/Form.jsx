@@ -10,7 +10,7 @@ const Form = () => {
         phone: '',
         email: ''
     })
-
+    
     const createOrder = (event) => {
         const {cartList, finalPrice} = useCartContext()
 
@@ -44,6 +44,8 @@ const handleOnChange = (event) => {
         [event.target.name]: event.target.value
     })
 }
+
+
 
     return (
         <>
