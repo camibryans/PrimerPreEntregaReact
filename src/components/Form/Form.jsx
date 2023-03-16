@@ -12,10 +12,9 @@ const Form = () => {
         email: ''
     })
     
-    const {cartList, finalPrice} = useCartContext()
-    const createOrder = (event) => {
+    const {cartList, emptyCart, finalPrice} = useCartContext()
+    const createOrder = () => {
       
-        event.preventDefault()
         const order = {}
         order.buyer = dataForm
         order.finalPrice = finalPrice()

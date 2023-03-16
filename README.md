@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-# Proyecto E-Commerce 
-I am working on an e-commerce web page using Javascript's library, ReactJs. 
-This is the first version in which I used components to create a NavBar, CartWidget and a Form.
-
-
 =======
 Eclair Coffee E-Commerce
 For CoffeLovers only
 
-DEMO: https://camibryans.github.io/PrimerPreEntregaReact/
+DEMO: https://drive.google.com/file/d/1JgInEJI_NBfd6G7gMFEf6u7NY_eUZlBA/view?usp=share_link
+
+Github Repo: https://camibryans.github.io/PrimerPreEntregaReact/
 
 # Proyect E-Commerce 
 I created an e-commerce web page using Javascript's library, ReactJs. 
