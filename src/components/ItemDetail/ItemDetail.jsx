@@ -23,9 +23,11 @@ const ItemDetail = ({product}) => {
                         <div className="card-body">
                             <img src={product.img} className="w-50"/>
                             <br/>            
-                            <p>Categoria: {product.category}</p>
+                            <label>Categoria: {product.category}</label>
                             <br/>
-                            <p>Precio: {product.price}</p>
+                            <label>Precio: {product.price}</label>
+                            <br/>
+                            <label>Stock: {product.stock}</label>
                         </div>
                     </div>
                 </div>

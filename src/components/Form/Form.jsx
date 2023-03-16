@@ -12,7 +12,7 @@ const Form = () => {
     })
 
     const createOrder = (event) => {
-        const {finalPrice} = useCartContext()
+        const {cartList, finalPrice} = useCartContext()
 
         event.preventDefault()
         const order = {}
@@ -27,13 +27,13 @@ const Form = () => {
     addDoc(queryCollection, order)
     .then(resp => setId(resp.id))
     .catch(err => console.log(err))
-    // .finally (() => setId(resp.id))
     .finally(() => {
         emptyCart()
         setDataForm({
             name:'',
             phone:'',
             email:''
+
         })
     })
 }
@@ -81,7 +81,8 @@ const handleOnChange = (event) => {
                     </form>
                 </div>
             </section>   
-            :  <h2> Tu número de Orden de Compra es:{id} </h2> }
+            :  
+            <h2> Tu número de Orden de Compra es:{id} </h2> }
         </>                
     )}
 

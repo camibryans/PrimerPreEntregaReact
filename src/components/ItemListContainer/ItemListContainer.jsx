@@ -14,35 +14,25 @@ export const ItemListContainer = ({greeting}) => {
         const db = getFirestore()        
         const queryCollection = collection(db, 'Items')
         
-
-        if(idCategory) {
-        const queryFilter = query(queryCollection, where( 'category', '==' , idCategory))              
+        const queryFilter = idCategory ? query(queryCollection, where( 'category', '==' , idCategory)) : queryCollection             
 
         getDocs(queryFilter)
         .then(respCollection => setProducts( respCollection.docs.map(prod => ({ id: prod.id, ...prod.data() })) ))
         .catch(err => console.error(err))
-        .finally(()=> setLoading(false))   
-    } else {
-        getDocs(queryCollection)
-        .then(respCollection => setProducts( respCollection.docs.map(prod => ({ id: prod.id, ...prod.data() })) ))
-        .catch(err => console.error(err))
-        .finally(()=> setLoading(false)) 
-    }
+        .finally(()=> setLoading(false))    
     
     }, [idCategory])
 
-
-
 return(
-    <>
- { loading ? 
+        <>
+        { loading ? 
             <Loading/>
-            : 
+        : 
                 <>
                     <h2>{greeting}</h2> 
                     <ItemList products={products}/>
                 </>
-            }
+        }
         </>
     )
 }

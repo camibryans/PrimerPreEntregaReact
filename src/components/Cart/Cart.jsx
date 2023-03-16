@@ -19,9 +19,7 @@ return(
                 { cartList.map(prodCart=> (
                         
                         <div key={prodCart.id} className='w-100'>
-                                {/* <div className="w-50"> */}
                                     <img src={prodCart.img} className='w-25' />
-                                {/* </div> */}
                                 Nombre: {prodCart.name} -
                                 Cantidad: {prodCart.quantity} -
                                 Precio: ${prodCart.price} 

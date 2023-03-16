@@ -5,7 +5,7 @@ const Loading = () => {
         return () => console.log('stop loading...')
     } )
     return (
-        <h2>Cargando ...</h2>
+        <h2 className='container d-flex justify-content-center'>Cargando ...</h2>
     )
 }
 
