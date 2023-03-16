@@ -13,8 +13,6 @@ const Form = () => {
     })
     
     const {cartList, finalPrice} = useCartContext()
-    
-    
     const createOrder = (event) => {
       
         event.preventDefault()
@@ -31,7 +29,7 @@ const Form = () => {
     .then(resp => setId(resp.id))
     .catch(err => console.log(err))
     .finally(() => {
-        // emptyCart()
+        emptyCart()
         setDataForm({
             name:'',
             phone:'',
@@ -41,17 +39,17 @@ const Form = () => {
     })
 }
 
-// const [error, setError] = useState("");
+const [error, setError] = useState("");
 
-// const handleSubmit = (event) => {
-//     event.preventDefault();
-//     if (dataForm.email !== dataForm.repeatemail) {
-//         setError("Por favor ingrese el mismo mail");
-//         return;
-//     }else {
-//         setError(""), createOrder();
-//     }
-//     };
+const handleSubmit = (event) => {
+    event.preventDefault();
+    if (dataForm.email !== dataForm.repeatemail) {
+        setError("Por favor ingrese el mismo mail");
+        return;
+    }else {
+        setError(""); createOrder();
+    }
+    };
 
 const handleOnChange = (event) => {
     setDataForm ({
@@ -68,7 +66,8 @@ const handleOnChange = (event) => {
             <section>
                 <Title title='Crea tu orden de compra' subtitle='Gracias por elegirnos!'/>
                 <div className="container d-flex justify-content-center" >
-                    <form className="form-group w-50" onSubmit={createOrder}>
+                {error && <p>{error}</p>}
+                    <form className="form-group w-50" onSubmit={handleSubmit}>
                         <h3>Ingrese sus datos</h3>
                         <input 
                         type="text"
@@ -98,7 +97,6 @@ const handleOnChange = (event) => {
                         placeholder="Repita su Email"
                         onChange={handleOnChange}
                         />
-                        {/* {Error && <span className="error">{Error}</span>} */}
                         <button className="btn btn-success">Generar orden de compra</button>
                     </form>
                 </div>
