@@ -9,7 +9,6 @@ const ItemDetail = ({product}) => {
     const { addCart } = useCartContext()
 
     function onAdd(quantity){
-    console.log(quantity)
     addCart( { ...product, quantity } ) 
     setBuy(false)
     }
