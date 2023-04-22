@@ -39,6 +39,7 @@ export const ItemCount = ({initial= 1, stock=10, onAdd}) => {
                 <div className="card-footer">
                     <button     
                         className="btn btn-outline-dark w-100" 
+                        disabled = {count ===0}
                         onClick={()=>onAdd(count)}>Agregar al carrito
                     </button>
                 </div>
